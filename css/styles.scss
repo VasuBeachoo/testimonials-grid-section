@@ -1,0 +1,141 @@
+// VARIABLES /////////////////////////////
+
+$colors: (
+  Moderate-violet: hsl(263, 55%, 52%),
+  Very-dark-grayish-blue: hsl(217, 19%, 35%),
+  Very-dark-blackish-blue: hsl(219, 29%, 14%),
+  White: hsl(0, 0%, 100%),
+  Light-gray: hsl(0, 0%, 81%),
+  Light-grayish-blue: hsl(210, 46%, 95%),
+);
+
+$component-font: "Barlow Semi Condensed", sans-serif;
+
+$testimonial-box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+  rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+
+///////////////////////////////////////
+// MIXINS /////////////////////////////
+
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+///////////////////////////////////////
+// FUNCTIONS /////////////////////////////
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+///////////////////////////////////////
+// STYLES /////////////////////////////
+
+body {
+  margin: 0;
+}
+
+.component-container {
+  @include flex();
+  min-height: 100vh;
+  background-color: color(Light-grayish-blue);
+}
+
+.component {
+  display: grid;
+  grid-template: repeat(2, 50%) / repeat(4, 25%);
+  font-family: $component-font;
+  width: 1100px;
+  margin: 50px 0;
+}
+
+.white-text {
+  color: color(White);
+}
+
+.gray-text {
+  color: color(Very-dark-grayish-blue);
+}
+
+.testimonial {
+  background-color: gray;
+  border-radius: 8px;
+  box-shadow: $testimonial-box-shadow;
+  padding: 30px;
+  margin: 15px;
+}
+
+.testimonial-header {
+  @include flex($justify: flex-start);
+}
+
+.author-img {
+  border-radius: 100%;
+  width: 40px;
+}
+
+.author-info {
+  @include flex($direction: column, $align: flex-start);
+  margin-left: 15px;
+}
+
+.author-name {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 3px 0;
+}
+
+.author-title {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.55;
+  margin: 0;
+}
+
+.testimonial-text {
+  @include flex(column, flex-start, flex-start);
+}
+
+.heading-text {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-top: 18px;
+  margin-bottom: 5px;
+}
+
+.paragraph-text {
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  opacity: 0.75;
+  margin-bottom: 0;
+}
+
+#testimonial-daniel {
+  grid-area: 1 / 1 / 2 / 3;
+  background-color: color(Moderate-violet);
+}
+
+#testimonial-jonathan {
+  grid-area: 1 / 3 / 2 / 4;
+  background-color: color(Very-dark-grayish-blue);
+}
+
+#testimonial-jeanette {
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: color(White);
+}
+
+#testimonial-patrick {
+  grid-area: 2/ 2 / 3 / 4;
+  background-color: color(Very-dark-blackish-blue);
+}
+
+#testimonial-kira {
+  grid-area: 1 / 4 / 3 / 5;
+  background-color: color(White);
+}
