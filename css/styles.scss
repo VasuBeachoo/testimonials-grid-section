@@ -81,6 +81,7 @@ body {
 }
 
 .author-img {
+  border: 1.3px solid color(Light-gray);
   border-radius: 100%;
   width: 40px;
 }
@@ -159,6 +160,10 @@ body {
   .component {
     grid-template: 1fr / 100%;
     width: 345px;
+  }
+
+  .author-info {
+    margin-left: 12px;
   }
 
   #testimonial-daniel {

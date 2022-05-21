@@ -65,6 +65,7 @@ body {
 }
 
 .author-img {
+  border: 1.3px solid #cfcfcf;
   border-radius: 100%;
   width: 40px;
 }
@@ -190,6 +191,9 @@ body {
     -ms-grid-columns: 100%;
         grid-template: 1fr / 100%;
     width: 345px;
+  }
+  .author-info {
+    margin-left: 12px;
   }
   #testimonial-daniel {
     -ms-grid-row: 1;
